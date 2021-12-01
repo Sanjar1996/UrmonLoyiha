@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs" style="margin-top:135px;">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Bog'lanish</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Bosh saxifa</a></li>
+            <li>Bog'lanish</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div data-aos="fade-up">
+{#          <iframe style="border:0; width: 100%; height: 350px;" src="https://goo.gl/maps/ogXexnwywMg7J48G8" frameborder="0" allowfullscreen></iframe>#}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5990.584598755921!2d69.327131!3d41.346!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41ae53a6e6b50415!2zNDHCsDIwJzQ1LjYiTiA2OcKwMTknMzcuNyJF!5e0!3m2!1sru!2s!4v1638366588062!5m2!1sru!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Manzil:</h4>
+                <p>Toshkent sh. Mirzo Ulug'bek t. Do'rmon yo'li ko'chasi 2A-uy</p>
+              </div>          
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Elektron pochta:</h4>
+                <p>urmonlohiya@urmon.uz</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Telefon:</h4>
+                <p>+998 (71) 262-29-34</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 mt-5 mt-lg-0">
+
+            <form action="{% url 'contact' %}" method="post" role="form" class="php-email-form">
+                {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Ismingiz..." required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Elektron pochta manzilingiz..." required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Xabar mazmuni..." required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Xabar..." required></textarea>
+              </div>
+                <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+                <div class="text-center"><button type="submit">Yuborish</button></div>
+            </form>
+
+          </div>
+            <div class="col-lg-4">
+                <h1>Ish kunlari</h1>
+
+                    <table id="customers" >
+                      <tr>
+                        <th>Xafta kunlari</th>
+                        <th>dan</th>
+                        <th>gacha</th>
+                      </tr>
+                      <tr>
+                        <td>Dushanba</td>
+                        <td>09:00</td>
+                        <td>18:00</td>
+                      </tr>
+                      <tr>
+                        <td>Seshanba</td>
+                        <td>09:00</td>
+                        <td>18:00</td>
+                      </tr>
+                        <tr>
+                            <td>Chorshanba</td>
+                            <td>09:00</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Payshanba</td>
+                            <td>09:00</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Juma</td>
+                            <td>09:00</td>
+                            <td>18:00</td>
+                        </tr>
+                        <tr style="color: red;">
+                            <td>Shanba</td>
+                            <td colspan="2">Dam olish kuni</td>
+{#                            <td>18:00</td>#}
+                        </tr>
+                        <tr style="color: red;">
+                            <td>Yakshanba</td>
+                            <td colspan="2">Dam olish kuni</td>
+{#                            <td>18:00</td>#}
+                        </tr>
+                    </table>
+            </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock content %}

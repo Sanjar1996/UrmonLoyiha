@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load active_link_tags %}
+{% load static %}
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-1.jpg' %})">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">"O'RMONLOYIHA" <span>LOYIHALASH INSTITUTI</span></h2>
+              <p class="animate__animated animate__fadeInUp">CHILONZOR TUMAN DAVLAT XIZMATLARI MARKAZIDA 2021 YIL 5-FEVRALDA RO'YXATGA OLINGAN.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <h2>"O'RMONLOYIHA" LOYIHALASH  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbspINSTITUTI</h2>
+            <h3>Institut o'z zimmasiga yuklatilgan vazifalarni bajarishda quyidagi huquqlarga ega:</h3>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+             &nbsp &nbsp &nbsp sohaga oid ayrim loyiha-qidiruv ishlarini bajarish uchun ilmiy-tadqiqot, loyihalash, konstruktorlik tashkilotlari, oliy ta'lim muassasalari  hamda boshqa yuridik  va jismoniy shaxslarni qonun qonun hujjatlarda belgilangan tartibda jalb etish; <br>
+                <br> &nbsp &nbsp &nbsp loyiha-qidiruv ishlariga jalb qilinadigan xodimlarning umumiy soni, kasbiy va malakaviy tarkibini mustaqil ravishda belgilash;<br>
+                <br> &nbsp &nbsp &nbsp mazkur Nizomda belgilangan vazifalarni bajarish uchun O'zbekiston Respublikasi hududi va undan tashqarida bajariladigan loyiha ishlariga bog'liq bo'lgan aloqa ishlarini yo'lga qo'yish (xalqaro tashkilotlarning sohaga oid Institutlari bilan aloqalar o'rnatish O'rmon xo'jaligi davlat qo'mitasi bilan kelishgan holda amalga oshiriladi); 
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="row">
+            {% for data in qonun %}
+            <div class="col-md-6">
+            <div class="icon-box">
+              <i class="{{ data.icon }}"></i>
+              <h4><a href="{{ data.link }}">{{ data.title }}</a></h4>
+              <p>{{ data.sub_title }}</p>
+            </div>
+          </div>
+            {% endfor %}
+      </div>
+      </div>
+    </section><!-- End Services Section -->
+  </main><!-- End #main -->
+
+ {% endblock content %}

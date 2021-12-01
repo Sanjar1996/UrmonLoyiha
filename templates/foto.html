@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <!-- ======= Our Services Section ======= -->
+    <section class="breadcrumbs" style="margin-top:135px;" >
+      <div class="container" >
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Foto lavhalar</h2>
+          <ol>
+            <li><a href="{% url 'home' %}">Bosh sahifa</a></li>
+            <li>Foto lavhalar</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+
+<div class="container">
+    <div class="row" style="padding: 10px; margin: 0;">
+    {% for data in foto %}
+      <div class="card m-lg-2" style="width:400px">
+      {% if data.images %}
+        <img class="card-img-top" src="{{ data.images.url }}" alt="Card image" style="width:100%; height: 250px;">
+      {% endif %}
+        <div class="card-body">
+          <h4 class="card-title">{{ data.title }}</h4>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
