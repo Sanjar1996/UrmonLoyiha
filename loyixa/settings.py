@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'loyixa.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql    ',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db_urmonloyiha_prod',
         'USER': 'urmonloyihauser_prod',
         'PASSWORD': 'urmonloyihapass_prod',
